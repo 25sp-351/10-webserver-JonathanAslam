@@ -83,7 +83,7 @@ int main(int argc, char* argv[]) {
         pthread_create(&thread, NULL, (void* (*)(void*))incoming_client_connection,
                        (void*)client_fd_buf);
 
-        pthread_detach(thread);
+        pthread_join(thread, NULL);
     }
 
     return 0;
